@@ -48,6 +48,7 @@ header {
   height: 70px;
   width: 100%;
   background-color: aquamarine;
+  padding-top: 15px;
 
   .title{
     >* {
@@ -65,9 +66,10 @@ header {
       }
     }
     
-      h1{
+      h1 {
        font-size: 1.9em;
        padding-left: 10px;
+       margin-bottom: 0;
       }
     
   }
