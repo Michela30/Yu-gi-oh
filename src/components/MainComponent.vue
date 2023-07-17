@@ -7,6 +7,7 @@ import {store} from '../store.js'
       return{
         //dati
         store,
+      
       }
     },
     methods: {
@@ -50,19 +51,19 @@ import {store} from '../store.js'
             <div class="col-sm-12 col-md-4 column" v-for="(singleCard, i) in store.cards" :key="i">
 
                 <div class="my_card">
-                <div class="card-img-box">
-                    <img :src="singleCard.card_images[0].image_url_small" alt="" class="img-fluid">
-                </div>
+                    <div class="card-img-box">
+                        <img :src="singleCard.card_images[0].image_url_small" alt="" class="img-fluid">
+                    </div>
 
-                <div class="text-center description-image">
-                    <h6 class="text-white fw-bold text-uppercase">
-                        {{ singleCard.name }}
-                    </h6>
+                    <div class="text-center description-image">
+                        <h6 class="text-white fw-bold text-uppercase">
+                            {{ singleCard.name }}
+                        </h6>
 
-                    <h6>
-                        {{ singleCard.archetype }}
-                    </h6>
-                </div>
+                        <h6>
+                            {{ singleCard.archetype }}
+                        </h6>
+                    </div>
                 </div>
 
             </div> 

@@ -2,6 +2,8 @@
 //import
 import HeaderComponent from './components/HeaderComponent.vue';
 import MainComponent from './components/MainComponent.vue';
+import LoaderComponent from './components/LoaderComponent.vue';
+
 import {store} from './store.js'
 
 import axios from 'axios';
@@ -10,18 +12,21 @@ import axios from 'axios';
     data() {
       return{
         store,
+        isLoad: false,
       }
     },
     components: {
       HeaderComponent,
       MainComponent,
+      LoaderComponent
      
     },
     created(){
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
       .then(response => {
         console.log(response.data);
-        this.store.cards = response.data.data
+        this.store.cards = response.data.data;
+        isLoad = true;
       })
 
     }
@@ -34,7 +39,9 @@ import axios from 'axios';
   <div>
     <HeaderComponent/>
 
-    <MainComponent/>
+    <LoaderComponent v-if="isLoad = false"/>
+
+    <MainComponent v-else/>
 
   </div>
 </template>
