@@ -42,7 +42,7 @@ import {store} from '../store.js'
         
             <!-- length -->
             <div class="number-container">
-                Found - card
+                Found {{store.cards.length}} card
             </div>
 
           <div class="row my_row">
@@ -54,7 +54,7 @@ import {store} from '../store.js'
                     <img :src="singleCard.card_images[0].image_url_small" alt="" class="img-fluid">
                 </div>
 
-                <div class="text-center py-4">
+                <div class="text-center description-image">
                     <h6 class="text-white fw-bold text-uppercase">
                         {{ singleCard.name }}
                     </h6>
@@ -85,7 +85,7 @@ main{
 
 .select-input{
   width: 15%;
-  margin-left: 80px;
+  margin-left: 100px;
   padding: 20px 0;
 }
 
@@ -114,12 +114,15 @@ main{
         background-color: #D48F38;
 
         .my_card {
-        height: 300px;
+        height: 360px;
 
+            .description-image{
+                background-color: #D48F38;
+                padding-top: 70px;
+            }
             .card-img-box {
             width: 100%;
             height: 200px;
-            border: 2px solid red;
 
             img {
                 width: 100%;
