@@ -2,7 +2,7 @@
 //import
 import HeaderComponent from './components/HeaderComponent.vue';
 import MainComponent from './components/MainComponent.vue';
-import FooterComponent from './components/FooterComponent.vue';
+
 import axios from 'axios';
 
    export default {
@@ -14,7 +14,7 @@ import axios from 'axios';
     components: {
       HeaderComponent,
       MainComponent,
-      FooterComponent
+     
     },
     created(){
       axios.get('')
@@ -34,7 +34,7 @@ import axios from 'axios';
 
     <MainComponent/>
 
-    <FooterComponent/>
+    
 
   </div>
 </template>
