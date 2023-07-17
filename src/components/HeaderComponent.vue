@@ -32,7 +32,7 @@
             
         </div>
         <h1>
-          Titolo
+          Yu-Gi-Oh-Api
         </h1>
       </div>
     </header>
@@ -47,7 +47,7 @@
 header {
   height: 70px;
   width: 100%;
-  background-color: aquamarine;
+  background-color: white;
   padding-top: 15px;
 
   .title{

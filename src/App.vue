@@ -8,7 +8,7 @@ import axios from 'axios';
    export default {
     data() {
       return{
-
+        cards : []
       }
     },
     components: {
@@ -17,9 +17,10 @@ import axios from 'axios';
      
     },
     created(){
-      axios.get('')
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
       .then(response => {
-        console.log(response.data)
+        console.log(response.data);
+        this.cards = response.data
       })
 
     }
@@ -32,7 +33,7 @@ import axios from 'axios';
   <div>
     <HeaderComponent/>
 
-    <MainComponent/>
+    <MainComponent :cards="cards.data" />
 
     
 
