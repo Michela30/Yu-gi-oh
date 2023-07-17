@@ -1,10 +1,12 @@
 <script>
 //import
+import {store} from '../store.js'
 
    export default {
     data() {
       return{
         //dati
+        store,
       }
     },
     methods: {
@@ -15,7 +17,6 @@
     },
     props:{
         //utilizzo per file padre
-        cards: []
     }
     
   }
@@ -38,19 +39,19 @@
 
 
         <div class="container">
-            
+        
             <!-- length -->
             <div class="number-container">
-                qui ci sono 39 card
+                Found - card
             </div>
 
           <div class="row my_row">
 
-            <div class="col-sm-12 col-md-4 column" v-for="(singleCard, i) in cards" :key="i">
+            <div class="col-sm-12 col-md-4 column" v-for="(singleCard, i) in store.cards" :key="i">
 
                 <div class="my_card">
                 <div class="card-img-box">
-                    <img :src="singleCard.card_images[0].image_url_small" alt="">
+                    <img :src="singleCard.card_images[0].image_url_small" alt="" class="img-fluid">
                 </div>
 
                 <div class="text-center py-4">
@@ -79,7 +80,7 @@
 @use '../assets/scss/variables.scss' as *;
 
 main{
-  background-color: bisque;
+  background-color: #D48F38
 }
 
 .select-input{
@@ -110,7 +111,7 @@ main{
 
         .column {
         width: calc((100% / 5) - 20px);
-        background-color: chocolate;
+        background-color: #D48F38;
 
         .my_card {
         height: 300px;

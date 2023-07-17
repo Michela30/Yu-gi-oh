@@ -2,13 +2,14 @@
 //import
 import HeaderComponent from './components/HeaderComponent.vue';
 import MainComponent from './components/MainComponent.vue';
+import {store} from './store.js'
 
 import axios from 'axios';
 
    export default {
     data() {
       return{
-        cards : []
+        store,
       }
     },
     components: {
@@ -20,7 +21,7 @@ import axios from 'axios';
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
       .then(response => {
         console.log(response.data);
-        this.cards = response.data
+        this.store.cards = response.data.data
       })
 
     }
@@ -33,9 +34,7 @@ import axios from 'axios';
   <div>
     <HeaderComponent/>
 
-    <MainComponent :cards="cards.data" />
-
-    
+    <MainComponent/>
 
   </div>
 </template>
