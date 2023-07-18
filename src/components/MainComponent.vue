@@ -7,12 +7,12 @@ import {store} from '../store.js'
       return{
         //dati
         store,
-      
       }
     },
     methods: {
         //function
     },
+
     components: {
         //dichiarazione
     },
@@ -28,10 +28,14 @@ import {store} from '../store.js'
 
     <main>
         <section class="select-input">
-          <select class="form-select" aria-label="select">
-            <option selected>Select</option>
-            <option value="" v-for="(singleType, index) in store.archetype" :key="index">{{singleType.archetype_name}}</option>
+          <select  @change="$emit('search')" v-model="store.searchType" class="form-select" aria-label="select">
+
+            <option value="" selected> Select</option>
+
+            <option :value="singleType.archetype_name" v-for="(singleType, index) in store.archetype" :key="index" > {{singleType.archetype_name}} </option>
+
           </select>
+          
         </section>
 
 

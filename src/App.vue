@@ -23,30 +23,45 @@ import axios from 'axios';
     },
     methods:{
       getCards(){
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0', {
+        params: {
+          archetype: this.store.searchType
+        }
+        })
+        .then(response => {
+          console.log(response.data);
+          this.store.cards = response.data.data;
+          
+        });
+      },
+
+      getArchetype(){
+          axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+        .then(response => {
+          console.log(response.data);
+          this.store.archetype = response.data;
+          
+        })
+      },
+
+      searchType(){
         
+        this.getArchetype();
+        this.getCards();
+        
+        console.log('intercettato evento emit')
       }
     },
     created() {
-
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-      .then(response => {
-        console.log(response.data);
-        this.store.cards = response.data.data;
-        
-      });
-
-      axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
-      .then(response => {
-        console.log(response.data);
-        this.store.archetype = response.data;
-        
-      })
+     
+      this.getCards();
+      this.getArchetype();
       
     },
     mounted(){
         setTimeout(() => {
           this.isLoad = true;
-        }, 5000);
+        }, 1000);
     },
   }
 </script>
@@ -59,7 +74,7 @@ import axios from 'axios';
 
     <LoaderComponent v-if="isLoad == false"/>
 
-    <MainComponent v-else/>
+    <MainComponent v-else @search="searchType()"/>
 
   </div>
 </template>
