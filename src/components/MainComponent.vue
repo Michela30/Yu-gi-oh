@@ -46,16 +46,16 @@ import {store} from '../store.js'
                 Found {{store.cards.length}} card
             </div>
 
-          <div class="row my_row">
+          <div class="row gx-0 my_row">
 
-            <div class="col-sm-12 col-md-4 column" v-for="(singleCard, i) in store.cards" :key="i">
+            <div class="col-6 col-md-4 column" v-for="(singleCard, i) in store.cards" :key="i">
 
                 <div class="my_card">
                     <div class="card-img-box">
                         <img :src="singleCard.card_images[0].image_url_small" alt="" class="img-fluid">
                     </div>
 
-                    <div class="text-center description-image">
+                    <div class="text-center description-image pt-md-0 pt-lg-5">
                         <h6 class="text-white fw-bold text-uppercase">
                             {{ singleCard.name }}
                         </h6>
@@ -81,7 +81,7 @@ import {store} from '../store.js'
 @use '../assets/scss/variables.scss' as *;
 
 main{
-  background-color: #D48F38
+  background-color: #D48F38;
 }
 
 .select-input{
@@ -115,11 +115,11 @@ main{
         background-color: #D48F38;
 
         .my_card {
-        height: 360px;
+        height: 50%;
 
             .description-image{
                 background-color: #D48F38;
-                padding-top: 70px;
+                word-wrap: break-word;
             }
             .card-img-box {
             width: 100%;
