@@ -30,11 +30,7 @@ import {store} from '../store.js'
         <section class="select-input">
           <select class="form-select" aria-label="select">
             <option selected>Select</option>
-            <option value="1">Alien</option>
-            <option value="2">Noble Knight</option>
-            <option value="3">Tainted Treasure</option>
-            <option value="4">Melodious</option>
-            <option value="5">Archfiend</option>
+            <option value="" v-for="(singleType, index) in store.archetype" :key="index">{{singleType.archetype_name}}</option>
           </select>
         </section>
 

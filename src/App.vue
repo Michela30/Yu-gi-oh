@@ -21,11 +21,24 @@ import axios from 'axios';
       LoaderComponent
      
     },
-    created(){
+    methods:{
+      getCards(){
+        
+      }
+    },
+    created() {
+
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
       .then(response => {
         console.log(response.data);
         this.store.cards = response.data.data;
+        
+      });
+
+      axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+      .then(response => {
+        console.log(response.data);
+        this.store.archetype = response.data;
         
       })
       
