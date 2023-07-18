@@ -40,9 +40,10 @@ import {store} from '../store.js'
 
 .loader {
 margin: auto;
+margin-top: 70px;
 border: 20px solid #EAF0F6;
 border-radius: 50%;
-border-top: 20px solid #FF7A59;
+border-top: 20px solid #D48F38;
 width: 100px;
 height: 100px;
 animation: spinner 4s linear infinite;

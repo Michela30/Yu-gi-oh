@@ -26,10 +26,15 @@ import axios from 'axios';
       .then(response => {
         console.log(response.data);
         this.store.cards = response.data.data;
-        isLoad = true;
+        
       })
-
-    }
+      
+    },
+    mounted(){
+        setTimeout(() => {
+          this.isLoad = true;
+        }, 5000);
+    },
   }
 </script>
 
@@ -39,7 +44,7 @@ import axios from 'axios';
   <div>
     <HeaderComponent/>
 
-    <LoaderComponent v-if="isLoad = false"/>
+    <LoaderComponent v-if="isLoad == false"/>
 
     <MainComponent v-else/>
 
