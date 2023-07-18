@@ -61,7 +61,7 @@ import axios from 'axios';
     mounted(){
         setTimeout(() => {
           this.isLoad = true;
-        }, 1000);
+        }, 5000);
     },
   }
 </script>

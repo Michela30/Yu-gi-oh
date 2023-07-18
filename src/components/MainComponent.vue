@@ -12,13 +12,13 @@ import {store} from '../store.js'
     methods: {
         //function
     },
-
     components: {
         //dichiarazione
     },
     props:{
         //utilizzo per file padre
-    }
+    },
+    
     
   }
 </script>
@@ -43,7 +43,7 @@ import {store} from '../store.js'
         
             <!-- length -->
             <div class="number-container">
-                Found {{store.cards.length}} card
+                Found {{store.cards.length}} card 
             </div>
 
           <div class="row gx-0 my_row">
@@ -70,6 +70,8 @@ import {store} from '../store.js'
             
           </div>
         </div>
+
+
     </main>
 
 </template>
